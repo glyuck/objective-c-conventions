@@ -3,7 +3,8 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 ## Whitespace
 
- * Tabs, not spaces.
+ * ~~Tabs, not spaces.~~
+<br />4 spaces for indentation.
  * End files with a newline.
  * Make liberal use of vertical whitespace to divide code into logical chunks.
 
@@ -11,7 +12,7 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
  * All method declarations should be documented.
  * Comments should be hard-wrapped at 80 characters.
- * Comments should be [Tomdoc](http://tomdoc.org/)-style.
+ * ~~Comments should be [Tomdoc](http://tomdoc.org/)-style.~~
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
 
 ```objc
@@ -69,7 +70,7 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 ```
 
  * Constructors should generally return [`instancetype`](http://clang.llvm.org/docs/LanguageExtensions.html#related-result-types) rather than `id`.
- * Prefer C99 struct initialiser syntax to helper functions (such as `CGRectMake()`).
+ * ~~Prefer C99 struct initialiser syntax to helper functions (such as `CGRectMake()`).~~
 
 ```objc
   CGRect rect = { .origin.x = 3.0, .origin.y = 12.0, .size.width = 15.0, .size.height = 80.0 };
@@ -78,7 +79,8 @@ void GHAwesomeFunction(BOOL hasSomeArgs);
 ## Expressions
 
  * Don't access an ivar unless you're in `-init`, `-dealloc` or a custom accessor.
- * Use dot-syntax when invoking idempotent methods, including setters and class methods (like `NSFileManager.defaultManager`).
+ * ~~Use dot-syntax when invoking idempotent methods, including setters and class methods (like `NSFileManager.defaultManager`).~~
+<br />Dot notation is allowed only for access to a declared @property
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
  * Comparisons should be explicit for everything except `BOOL`s.
  * Prefer positive comparisons to negative.
@@ -102,19 +104,22 @@ NewType a = (NewType)b;
 
 ## Control Structures
 
- * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
+ * ~~Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`.~~
+<br />Always surround `if` bodies with curly braces even if there is no `else` and body is single-line.
  * All curly braces should begin on the same line as their associated statement. They should end on a new line.
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
  * No spaces between parentheses and their contents.
 
 ```objc
-if (shitIsBad) return;
+if (shitIsBad) {
+    return;
+}
 
 if (something == nil) {
-	// do stuff
+    // do stuff
 } else {
-	// do other stuff
+    // do other stuff
 }
 ```
 
