@@ -1,5 +1,6 @@
 These guidelines build on Apple's existing [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html).
 Unless explicitly contradicted below, assume that all of Apple's guidelines apply as well.
+You also should follow [Google Objective-C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml). If it conflicts with conventions in this file, the later has precedence.
 
 ## Whitespace
 
